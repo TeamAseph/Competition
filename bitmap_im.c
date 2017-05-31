@@ -20,7 +20,7 @@ int main()
   int k;
   printf("Enter k: ");
   scanf("%d", &k);
-  if((r%k != 0) && c%k != 0)
+  if((r%k != 0) || c%k != 0)
     {
       printf("Error: k doesnt divide number of rows and columns!\n");
       exit(1);
