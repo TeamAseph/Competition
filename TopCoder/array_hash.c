@@ -20,11 +20,10 @@ int sum(char **str, int n)
     {
       while(ch != '\0')
 	{
-	  sum = sum + t + i + alpha(ch);
 	  ch = *(str[i] + t);
+	  sum = sum + t + i + alpha(ch) ;
 	  t++;
 	}
-      ch = ' ';
       t = 0;
     }
   return sum;
@@ -42,6 +41,6 @@ int main()
       scanf("%s", ch[i]);
     }
   int sum1 = sum(ch, n);
-  printf("%d", sum1);
+  printf("%d\n", sum1);
   return 0;
 }
