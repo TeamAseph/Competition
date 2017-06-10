@@ -19,12 +19,12 @@ public:
         
         for (int i = 0; i < pattern.size(); ++i) {
             //std::cout << "index: " << i << std::endl;
-            if (pattern[i] <= '2' && jumps[i] == 'S') {
+            if (pattern[i] <= 2 && jumps[i] == 'S') {
                 std::cout << "first hit: " << i << std::endl;
                 hits++;
             }
             
-            if (pattern[i] > '2' && jumps[i] == 'J') {
+            if (pattern[i] > 2 && jumps[i] == 'J') {
                 std::cout << "second hit: " << i << std::endl;
                 hits++;
             }
