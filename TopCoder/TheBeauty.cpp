@@ -19,19 +19,20 @@ public:
             return 1;
         }
         
+        digits.clear();
+        
         if (n >= 10) {
-            find (n / 10);
-            
-            int digit = 0;
-            digit = n % 10;
-            
-            digits.push_back(digit);
-            for (int i = 0; i < digits.size(); ++i) {
-                if (digit != digits[i]) {
+            while (n != 0) {
+                int digit = n % 10;
+                n /= 10;
+                
+                if (std::find(digits.begin(), digits.end(), digit) != digits.end()) {
+                    
+                } else {
                     digits.push_back(digit);
                 }
+                
             }
-            
         }
         
         return digits.size();
@@ -44,10 +45,10 @@ private:
 int main() {
     TheBeauty test;
     
-    //std::cout << test.find(7) << std::endl; // should return 1
-    //std::cout << test.find(100) << std::endl; // 2
+    std::cout << test.find(7) << std::endl; // should return 1
+    std::cout << test.find(100) << std::endl; // 2
     std::cout << test.find(123456789) << std::endl; // 9
-    //std::cout << test.find(1000000000) << std::endl; // 2
+    std::cout << test.find(1000000000) << std::endl; // 2
     
     return 0;
 }
